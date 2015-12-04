@@ -24,6 +24,7 @@
         _locationManager = [[CLLocationManager alloc] init];
         _locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
         _locationManager.distanceFilter = 100;
+        _locationManager.delegate = self;
     }
     return self;
 }
@@ -35,8 +36,20 @@
     self.completion = completion;
     
     if (completion != NULL) {
+        [self.locationManager requestWhenInUseAuthorization];
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
+            completion(nil, [self deniedAuthorizationStatusError]);
+            return;
+        }
         [self.locationManager startUpdatingLocation];
     }
+}
+
+- (nonnull NSError *)deniedAuthorizationStatusError {
+    NSError *error = [[NSError alloc] initWithDomain:NSLocalizedString(@"ios-workshops_error_domain",nil)
+                                                code:-666
+                                            userInfo:@{@"localizedDescription" : NSLocalizedString(@"denied_localization_service", nil)}];
+    return error;
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -54,6 +67,12 @@
     }
 
     [self.locationManager stopUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [self.locationManager startUpdatingLocation];
+    }
 }
 
 @end

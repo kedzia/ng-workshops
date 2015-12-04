@@ -22,6 +22,15 @@
 @implementation NGWLocationsListViewController
 
 #pragma mark - Lifecycle
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _venueArray = @[];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configureView];

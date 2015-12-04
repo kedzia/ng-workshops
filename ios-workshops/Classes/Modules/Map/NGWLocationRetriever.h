@@ -17,7 +17,7 @@
 
 /**
  *  Obtains user's device location. Requests for permission if needed.
- *  If status is equal to kCLAuthorizationStatusDenied them immediately invokes completion block with error.
+ *  If status is equal to kCLAuthorizationStatusDenied them immediately invokes completion block with error (code -666).
  */
 - (void)obtainUserLocationWithCompletion:(void (^_Nullable)(CLLocation * _Nullable, NSError * _Nullable))completion;
 
