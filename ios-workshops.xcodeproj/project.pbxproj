@@ -26,6 +26,11 @@
 		5ED8FB221BF0C2E200A0793F /* NGWLocationFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FB211BF0C2E200A0793F /* NGWLocationFormatter.m */; };
 		66D8BD541C12328000B29406 /* NGWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD531C12328000B29406 /* NGWCollectionViewCell.m */; };
 		66D8BD551C12D75100B29406 /* NGWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD531C12328000B29406 /* NGWCollectionViewCell.m */; };
+		66D8BD591C12F21100B29406 /* NGWCategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD581C12F21100B29406 /* NGWCategoriesTableViewController.m */; };
+		66D8BD5C1C12F36A00B29406 /* NGWCategoriesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD5B1C12F36A00B29406 /* NGWCategoriesDataProvider.m */; };
+		66D8BD5D1C12F52100B29406 /* NGWCategoriesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD5B1C12F36A00B29406 /* NGWCategoriesDataProvider.m */; };
+		66D8BD601C1336D700B29406 /* NGWCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD5F1C1336D700B29406 /* NGWCategoryTableViewCell.m */; };
+		66D8BD611C1336D700B29406 /* NGWCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD5F1C1336D700B29406 /* NGWCategoryTableViewCell.m */; };
 		E121E4011BE79E450094C2AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E121E4001BE79E450094C2AB /* main.m */; };
 		E121E4041BE79E450094C2AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E121E4031BE79E450094C2AB /* AppDelegate.m */; };
 		E121E40D1BE79E450094C2AB /* ios_workshops.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E121E40B1BE79E450094C2AB /* ios_workshops.xcdatamodeld */; };
@@ -78,6 +83,12 @@
 		5ED8FB211BF0C2E200A0793F /* NGWLocationFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGWLocationFormatter.m; path = Formatters/NGWLocationFormatter.m; sourceTree = "<group>"; };
 		66D8BD521C12328000B29406 /* NGWCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGWCollectionViewCell.h; path = Cells/NGWCollectionViewCell.h; sourceTree = "<group>"; };
 		66D8BD531C12328000B29406 /* NGWCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGWCollectionViewCell.m; path = Cells/NGWCollectionViewCell.m; sourceTree = "<group>"; };
+		66D8BD571C12F21100B29406 /* NGWCategoriesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGWCategoriesTableViewController.h; path = Category/NGWCategoriesTableViewController.h; sourceTree = "<group>"; };
+		66D8BD581C12F21100B29406 /* NGWCategoriesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGWCategoriesTableViewController.m; path = Category/NGWCategoriesTableViewController.m; sourceTree = "<group>"; };
+		66D8BD5A1C12F36A00B29406 /* NGWCategoriesDataProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGWCategoriesDataProvider.h; path = ../NGWCategoriesDataProvider.h; sourceTree = "<group>"; };
+		66D8BD5B1C12F36A00B29406 /* NGWCategoriesDataProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGWCategoriesDataProvider.m; path = ../NGWCategoriesDataProvider.m; sourceTree = "<group>"; };
+		66D8BD5E1C1336D700B29406 /* NGWCategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGWCategoryTableViewCell.h; path = Category/NGWCategoryTableViewCell.h; sourceTree = "<group>"; };
+		66D8BD5F1C1336D700B29406 /* NGWCategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGWCategoryTableViewCell.m; path = Category/NGWCategoryTableViewCell.m; sourceTree = "<group>"; };
 		7DECC0CBE19C7057162FEA56 /* Pods-ios-workshops.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-workshops.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-workshops/Pods-ios-workshops.release.xcconfig"; sourceTree = "<group>"; };
 		8B5761C1DA0F4FBBB868A8F0 /* Pods-ios-workshops.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-workshops.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-workshops/Pods-ios-workshops.debug.xcconfig"; sourceTree = "<group>"; };
 		A310A73DD1F2B382725CC988 /* Pods_ios_workshops.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_workshops.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +150,8 @@
 		3A8FF4FB1BECFCAB00CBEB25 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				66D8BD5A1C12F36A00B29406 /* NGWCategoriesDataProvider.h */,
+				66D8BD5B1C12F36A00B29406 /* NGWCategoriesDataProvider.m */,
 				3A8FF4FC1BECFCDC00CBEB25 /* NGWAPIClient.h */,
 				3A8FF4FD1BECFCDC00CBEB25 /* NGWAPIClient.m */,
 			);
@@ -176,6 +189,17 @@
 				66D8BD531C12328000B29406 /* NGWCollectionViewCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		66D8BD561C12F1E900B29406 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				66D8BD571C12F21100B29406 /* NGWCategoriesTableViewController.h */,
+				66D8BD581C12F21100B29406 /* NGWCategoriesTableViewController.m */,
+				66D8BD5E1C1336D700B29406 /* NGWCategoryTableViewCell.h */,
+				66D8BD5F1C1336D700B29406 /* NGWCategoryTableViewCell.m */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 		E121E3F31BE79E450094C2AB = {
@@ -239,6 +263,7 @@
 		E121E42A1BE9556F0094C2AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				66D8BD561C12F1E900B29406 /* Category */,
 				E121E47C1BED59670094C2AB /* Common */,
 				E121E43B1BEB83160094C2AB /* LocationList */,
 				E121E4401BEB83160094C2AB /* Map */,
@@ -560,6 +585,7 @@
 				E121E44C1BEB83160094C2AB /* NGWMapViewController.m in Sources */,
 				5E43FBEB1BF409E400C7DA25 /* NGWGeocoder.m in Sources */,
 				66D8BD541C12328000B29406 /* NGWCollectionViewCell.m in Sources */,
+				66D8BD591C12F21100B29406 /* NGWCategoriesTableViewController.m in Sources */,
 				3A8167B11BF42A9A003683BD /* NGWCategory.m in Sources */,
 				E121E44A1BEB83160094C2AB /* NGWLocationsListViewController.m in Sources */,
 				E121E40D1BE79E450094C2AB /* ios_workshops.xcdatamodeld in Sources */,
@@ -568,7 +594,9 @@
 				E121E4801BED59670094C2AB /* NGWVenue.m in Sources */,
 				E1B052451BF0BEAA00E56BBF /* NGWCoreDataStack.m in Sources */,
 				E121E4011BE79E450094C2AB /* main.m in Sources */,
+				66D8BD5C1C12F36A00B29406 /* NGWCategoriesDataProvider.m in Sources */,
 				3A8FF4FE1BECFCDC00CBEB25 /* NGWAPIClient.m in Sources */,
+				66D8BD601C1336D700B29406 /* NGWCategoryTableViewCell.m in Sources */,
 				E121E44E1BEB83160094C2AB /* NGWRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -590,8 +618,10 @@
 				E121E44D1BEB83160094C2AB /* NGWMapViewController.m in Sources */,
 				5E43FBED1BF4123800C7DA25 /* NGWGeocoderSpec.m in Sources */,
 				66D8BD551C12D75100B29406 /* NGWCollectionViewCell.m in Sources */,
+				66D8BD5D1C12F52100B29406 /* NGWCategoriesDataProvider.m in Sources */,
 				E1D586951BF4ABB500461193 /* NGWLocationListManagerSpec.m in Sources */,
 				3A8349D11BF622B10051CC5A /* NGWCategorySpec.m in Sources */,
+				66D8BD611C1336D700B29406 /* NGWCategoryTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

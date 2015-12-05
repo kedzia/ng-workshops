@@ -32,10 +32,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, readonly) NSString *identifier;
 
 /// The name of the category.
-@property (weak, nonatomic, readonly) NSString *name;
+@property (strong, nonatomic, readonly) NSString *name;
 
 /// The array of sub-categories.
 @property (strong, nonatomic, readonly) NSArray<NGWCategory *> *childCategories;
+
+/// Url to icon image
+@property (strong, nonatomic, readonly) NSURL *iconURL;
 
 NS_ASSUME_NONNULL_END
 
