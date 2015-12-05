@@ -38,7 +38,7 @@ describe(@"NGWMapAnnotation", ^{
         });
         
         it(@"address should be nil", ^{
-            expect(sut.address).toNot.beNil();
+            expect(sut.address).beNil();
         });
     });
     

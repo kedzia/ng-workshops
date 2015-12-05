@@ -50,7 +50,6 @@ static NSString *NGWAnnotationReuseIdentifier = @"NGWAnnotationReuseIdentifier";
     
     if (!self.didSetConstraints) {
         [self.mapView autoPinEdgesToSuperviewEdges];
-        [self.mapView autoSetDimension:ALDimensionWidth toSize:100.f];
         
         self.didSetConstraints = YES;
     }

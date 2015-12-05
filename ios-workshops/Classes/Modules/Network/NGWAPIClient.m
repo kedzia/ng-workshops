@@ -71,7 +71,7 @@ NSString * const NGWAPIClientErrorDomain = @"NGWAPIClientErrorDomain";
 		NSUInteger statusCode = ((NSHTTPURLResponse *)response).statusCode;
 		if (statusCode < 200 || statusCode > 299) {
 			completion(nil, [NSError errorWithDomain:NGWAPIClientErrorDomain code:0 userInfo:@{
-				NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Unacceptable status code: %lu", statusCode]
+				NSLocalizedDescriptionKey: [NSString stringWithFormat:@"Unacceptable status code: %lu", (unsigned long)statusCode]
 			}]);
 		} else if (!error && data != nil) {
 			NSDictionary<NSString *, id> *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];

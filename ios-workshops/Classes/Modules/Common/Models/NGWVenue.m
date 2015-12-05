@@ -7,12 +7,7 @@
 //
 
 #import "NGWVenue.h"
-
-NSString * const NGWVenueAddressStreetKey = @"Street";
-NSString * const NGWVenueAddressPostalCodeKey = @"ZIP";
-NSString * const NGWVenueAddressCountryCodeKey = @"CountryCode";
-NSString * const NGWVenueAddressCityCodeKey = @"City";
-NSString * const NGWVenueAddressStateCodeKey = @"State";
+@import Contacts;
 
 @implementation NGWVenue
 
@@ -28,11 +23,12 @@ NSString * const NGWVenueAddressStateCodeKey = @"State";
 				.latitude = ((NSNumber *)(json[@"location"][@"lat"])).doubleValue,
 				.longitude = ((NSNumber *)(json[@"location"][@"lng"])).doubleValue
 			} addressDictionary:@{
-				NGWVenueAddressStreetKey: json[@"location"][@"address"] ?: @"",
-				NGWVenueAddressPostalCodeKey: json[@"location"][@"postalCode"] ?: @"",
-				NGWVenueAddressCountryCodeKey: json[@"location"][@"cc"] ?: @"",
-				NGWVenueAddressCityCodeKey: json[@"location"][@"city"] ?: @"",
-				NGWVenueAddressStateCodeKey: json[@"location"][@"state"] ?: @""
+                
+				CNPostalAddressStreetKey: json[@"location"][@"address"] ?: @"",
+				CNPostalAddressPostalCodeKey: json[@"location"][@"postalCode"] ?: @"",
+				CNPostalAddressISOCountryCodeKey: json[@"location"][@"cc"] ?: @"",
+				CNPostalAddressCityKey: json[@"location"][@"city"] ?: @"",
+				CNPostalAddressStateKey: json[@"location"][@"state"] ?: @""
 			}];
 			MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:placemark];
 			item.name = json[@"name"];

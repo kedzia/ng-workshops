@@ -25,12 +25,10 @@
 		5ED8FB1E1BF0AC1C00A0793F /* NGWMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FB1D1BF0AC1C00A0793F /* NGWMapAnnotation.m */; };
 		5ED8FB221BF0C2E200A0793F /* NGWLocationFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FB211BF0C2E200A0793F /* NGWLocationFormatter.m */; };
 		66D8BD541C12328000B29406 /* NGWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD531C12328000B29406 /* NGWCollectionViewCell.m */; };
-		66D8BD551C12D75100B29406 /* NGWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD531C12328000B29406 /* NGWCollectionViewCell.m */; };
 		66D8BD591C12F21100B29406 /* NGWCategoriesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD581C12F21100B29406 /* NGWCategoriesTableViewController.m */; };
 		66D8BD5C1C12F36A00B29406 /* NGWCategoriesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD5B1C12F36A00B29406 /* NGWCategoriesDataProvider.m */; };
 		66D8BD5D1C12F52100B29406 /* NGWCategoriesDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD5B1C12F36A00B29406 /* NGWCategoriesDataProvider.m */; };
 		66D8BD601C1336D700B29406 /* NGWCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD5F1C1336D700B29406 /* NGWCategoryTableViewCell.m */; };
-		66D8BD611C1336D700B29406 /* NGWCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD5F1C1336D700B29406 /* NGWCategoryTableViewCell.m */; };
 		E121E4011BE79E450094C2AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E121E4001BE79E450094C2AB /* main.m */; };
 		E121E4041BE79E450094C2AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E121E4031BE79E450094C2AB /* AppDelegate.m */; };
 		E121E40D1BE79E450094C2AB /* ios_workshops.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E121E40B1BE79E450094C2AB /* ios_workshops.xcdatamodeld */; };
@@ -617,11 +615,9 @@
 				E1B0524A1BF0D64300E56BBF /* NGWLocationListManager.m in Sources */,
 				E121E44D1BEB83160094C2AB /* NGWMapViewController.m in Sources */,
 				5E43FBED1BF4123800C7DA25 /* NGWGeocoderSpec.m in Sources */,
-				66D8BD551C12D75100B29406 /* NGWCollectionViewCell.m in Sources */,
 				66D8BD5D1C12F52100B29406 /* NGWCategoriesDataProvider.m in Sources */,
 				E1D586951BF4ABB500461193 /* NGWLocationListManagerSpec.m in Sources */,
 				3A8349D11BF622B10051CC5A /* NGWCategorySpec.m in Sources */,
-				66D8BD611C1336D700B29406 /* NGWCategoryTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
