@@ -11,6 +11,7 @@
 #import <Expecta/Expecta.h>
 #import "NGWLocationListManager.h"
 #import "NGWVenue.h"
+#import "NGWCollectionViewCell.h"
 
 SpecBegin(NGWLocationListManager)
 
@@ -19,7 +20,10 @@ SpecBegin(NGWLocationListManager)
     NSArray<NGWVenue *> * (^setupVenueArray)(NSUInteger) = ^NSArray <NGWVenue *> *(NSUInteger numberOfItems) {
         NSMutableArray <NGWVenue *>*venueArray = [NSMutableArray array];
         for(NSUInteger i = 0; i < numberOfItems; i++) {
-            [venueArray addObject:[OCMockObject mockForClass:[NGWVenue class]]];
+            NGWVenue *mockVenue = [OCMockObject mockForClass:[NGWVenue class]];
+            OCMStub([mockVenue name]).andReturn(@"mockName");
+            [venueArray addObject:mockVenue];
+            
         }
         return venueArray.copy;
     };

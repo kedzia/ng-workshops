@@ -23,9 +23,10 @@
     self = [super init];
     if (self) {
         _collectionView = collectionView;
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
         _locations = @[];
         [_collectionView registerClass:[NGWCollectionViewCell class] forCellWithReuseIdentifier:@"identifier"];
-        _sessionTaskDictionary = @{}.mutableCopy;
     }
     return self;
 }
@@ -60,7 +61,6 @@
 }
 
 - (void)loadPhotoForCell:(NGWCollectionViewCell *)cell atIndexPath:(NSIndexPath *)indexPath{
-    NSAssert(self.apiClient, @"Api client is nil");
      __block NSURLSessionTask *task = [self.apiClient photoForVenue:[self.locations objectAtIndex:indexPath.row]
                               completion:^(UIImage * _Nullable photo, NSError * _Nullable error) {
                                   
