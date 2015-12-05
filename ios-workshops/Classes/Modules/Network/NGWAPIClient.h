@@ -8,6 +8,7 @@
 
 #import <CoreLocation/CoreLocation.h>
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @class NGWCategory;
 @class NGWVenue;
@@ -37,6 +38,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param radius The accuracy of the search.
 /// @param completion The completion block.
 - (void)getVenuesNearCoordinate:(CLLocationCoordinate2D)coordinate radius:(CLLocationAccuracy)radius query:(nullable NSString *)query categories:(nullable NSArray<NGWCategory *> *)categories completion:(void (^)(NSArray<NGWVenue *> * _Nullable venues, NSError * _Nullable error))completion;
+
+- (NSURLSessionTask *)photoForVenue:(NGWVenue *)venue completion:(void (^)(UIImage * _Nullable photo, NSError * _Nullable error))completion;
 
 NS_ASSUME_NONNULL_END
 

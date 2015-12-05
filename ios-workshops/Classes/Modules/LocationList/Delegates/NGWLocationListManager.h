@@ -7,10 +7,11 @@
 //
 
 @import UIKit;
-
+#import "NGWAPIClient.h"
 @class NGWVenue;
 
 @interface NGWLocationListManager : NSObject <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (strong, nonatomic) NGWAPIClient *apiClient;
 - (instancetype)init NS_UNAVAILABLE;
 - (instancetype)initWithCollectionView:(UICollectionView *)collectionView NS_DESIGNATED_INITIALIZER;
 

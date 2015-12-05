@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NGWVenue.h"
+#import "NGWLocationListManager.h"
 
 @interface NGWLocationsListViewController : UIViewController
-@property (strong, nonatomic) NSArray <NGWVenue *> *venueArray;
+@property (strong, nonatomic) NGWLocationListManager *locationListManager;
 @end

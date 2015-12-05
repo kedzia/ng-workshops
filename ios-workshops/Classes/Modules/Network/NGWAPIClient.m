@@ -66,8 +66,8 @@ NSString * const NGWAPIClientErrorDomain = @"NGWAPIClientErrorDomain";
 	return request;
 }
 
-- (void)resumeDataTaskWithRequest:(NSURLRequest *)request completion:(void(^)(NSDictionary<NSString *, id> *json, NSError *error))completion {
-	[[self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+- (NSURLSessionTask *)resumeDataTaskWithRequest:(NSURLRequest *)request completion:(void(^)(NSDictionary<NSString *, id> *json, NSError *error))completion {
+	NSURLSessionTask *task = [self.session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 		NSUInteger statusCode = ((NSHTTPURLResponse *)response).statusCode;
 		if (statusCode < 200 || statusCode > 299) {
 			completion(nil, [NSError errorWithDomain:NGWAPIClientErrorDomain code:0 userInfo:@{
@@ -83,7 +83,9 @@ NSString * const NGWAPIClientErrorDomain = @"NGWAPIClientErrorDomain";
 		} else {
 			completion(nil, error);
 		}
-	}] resume];
+    }];
+    [task resume];
+    return task;
 }
 
 #pragma mark Venues search
@@ -132,6 +134,41 @@ NSString * const NGWAPIClientErrorDomain = @"NGWAPIClientErrorDomain";
 			completion(nil, error);
 		}
 	}];
+}
+
+#pragma mark Photo 
+
+- (NSURLSessionTask *)photoForVenue:(NGWVenue *)venue completion:(void (^)(UIImage * photo, NSError *error))completion{
+    NSURLRequest *request = [self URLRequestWithMethod:@"GET" URLString:[NSString stringWithFormat:@"venues/%@/photos", venue.identifier]
+                                            queryItems:@[[NSURLQueryItem queryItemWithName:@"VENUE_ID" value:venue.identifier],
+                                                         [NSURLQueryItem queryItemWithName:@"limit" value:@(1).stringValue],
+                                                         ]];
+
+    return [self resumeDataTaskWithRequest:request completion:^(NSDictionary<NSString *,id> *json, NSError *error) {
+        if (!error) {
+            
+            NSDictionary<NSString *,id> *photos = json[@"response"][@"photos"];
+            if ([photos[@"count"] integerValue] == 1) {
+                NSString *prefix = [photos[@"items"] firstObject][@"prefix"];
+                NSString *suffix = [photos[@"items"] firstObject][@"suffix"];
+                [self photoWithPrefix:prefix andSuffix:suffix completion:^(UIImage *photo, NSError *error) {
+                    completion(photo, error);
+                }];
+            }
+        } else {
+            completion(nil, error);
+        }
+    }];
+}
+
+- (void)photoWithPrefix:(NSString * )prefix andSuffix:(NSString *)suffix completion:(void (^)(UIImage * photo, NSError *error))completion{
+    NSParameterAssert(prefix);
+    NSParameterAssert(suffix);
+    NSError *error = nil;
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@100x100%@",prefix,suffix]];
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error]];
+    
+    completion(image, error);
 }
 
 @end

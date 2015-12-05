@@ -24,6 +24,8 @@
 		5E43FBF21BF5303D00C7DA25 /* NGWMapAnnotationSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E43FBF11BF5303D00C7DA25 /* NGWMapAnnotationSpec.m */; };
 		5ED8FB1E1BF0AC1C00A0793F /* NGWMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FB1D1BF0AC1C00A0793F /* NGWMapAnnotation.m */; };
 		5ED8FB221BF0C2E200A0793F /* NGWLocationFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED8FB211BF0C2E200A0793F /* NGWLocationFormatter.m */; };
+		66D8BD541C12328000B29406 /* NGWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD531C12328000B29406 /* NGWCollectionViewCell.m */; };
+		66D8BD551C12D75100B29406 /* NGWCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66D8BD531C12328000B29406 /* NGWCollectionViewCell.m */; };
 		E121E4011BE79E450094C2AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E121E4001BE79E450094C2AB /* main.m */; };
 		E121E4041BE79E450094C2AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E121E4031BE79E450094C2AB /* AppDelegate.m */; };
 		E121E40D1BE79E450094C2AB /* ios_workshops.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E121E40B1BE79E450094C2AB /* ios_workshops.xcdatamodeld */; };
@@ -74,6 +76,8 @@
 		5ED8FB1D1BF0AC1C00A0793F /* NGWMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGWMapAnnotation.m; path = Models/NGWMapAnnotation.m; sourceTree = "<group>"; };
 		5ED8FB201BF0C2E200A0793F /* NGWLocationFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGWLocationFormatter.h; path = Formatters/NGWLocationFormatter.h; sourceTree = "<group>"; };
 		5ED8FB211BF0C2E200A0793F /* NGWLocationFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGWLocationFormatter.m; path = Formatters/NGWLocationFormatter.m; sourceTree = "<group>"; };
+		66D8BD521C12328000B29406 /* NGWCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGWCollectionViewCell.h; path = Cells/NGWCollectionViewCell.h; sourceTree = "<group>"; };
+		66D8BD531C12328000B29406 /* NGWCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGWCollectionViewCell.m; path = Cells/NGWCollectionViewCell.m; sourceTree = "<group>"; };
 		7DECC0CBE19C7057162FEA56 /* Pods-ios-workshops.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-workshops.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-workshops/Pods-ios-workshops.release.xcconfig"; sourceTree = "<group>"; };
 		8B5761C1DA0F4FBBB868A8F0 /* Pods-ios-workshops.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-workshops.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-workshops/Pods-ios-workshops.debug.xcconfig"; sourceTree = "<group>"; };
 		A310A73DD1F2B382725CC988 /* Pods_ios_workshops.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_workshops.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +169,15 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		66D8BD4E1C1231D100B29406 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				66D8BD521C12328000B29406 /* NGWCollectionViewCell.h */,
+				66D8BD531C12328000B29406 /* NGWCollectionViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		E121E3F31BE79E450094C2AB = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +252,7 @@
 		E121E43B1BEB83160094C2AB /* LocationList */ = {
 			isa = PBXGroup;
 			children = (
+				66D8BD4E1C1231D100B29406 /* Cells */,
 				E121E43C1BEB83160094C2AB /* Delegates */,
 				E121E43D1BEB83160094C2AB /* ViewControllers */,
 			);
@@ -545,6 +559,7 @@
 				5E43FBF01BF4D6D000C7DA25 /* NGWLocationRetriever.m in Sources */,
 				E121E44C1BEB83160094C2AB /* NGWMapViewController.m in Sources */,
 				5E43FBEB1BF409E400C7DA25 /* NGWGeocoder.m in Sources */,
+				66D8BD541C12328000B29406 /* NGWCollectionViewCell.m in Sources */,
 				3A8167B11BF42A9A003683BD /* NGWCategory.m in Sources */,
 				E121E44A1BEB83160094C2AB /* NGWLocationsListViewController.m in Sources */,
 				E121E40D1BE79E450094C2AB /* ios_workshops.xcdatamodeld in Sources */,
@@ -574,6 +589,7 @@
 				E1B0524A1BF0D64300E56BBF /* NGWLocationListManager.m in Sources */,
 				E121E44D1BEB83160094C2AB /* NGWMapViewController.m in Sources */,
 				5E43FBED1BF4123800C7DA25 /* NGWGeocoderSpec.m in Sources */,
+				66D8BD551C12D75100B29406 /* NGWCollectionViewCell.m in Sources */,
 				E1D586951BF4ABB500461193 /* NGWLocationListManagerSpec.m in Sources */,
 				3A8349D11BF622B10051CC5A /* NGWCategorySpec.m in Sources */,
 			);

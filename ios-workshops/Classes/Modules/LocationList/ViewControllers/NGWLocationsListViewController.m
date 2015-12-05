@@ -8,7 +8,6 @@
 
 #import "NGWLocationsListViewController.h"
 
-#import "NGWLocationListManager.h"
 
 @import PureLayout;
 
@@ -16,20 +15,12 @@
 @property (assign, nonatomic) BOOL didSetConstraints;
 
 @property (strong, nonatomic) UICollectionView *locationsListCollectionView;
-@property (strong, nonatomic) NGWLocationListManager *locationListManager;
 @end
 
 @implementation NGWLocationsListViewController
 
 #pragma mark - Lifecycle
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        _venueArray = @[];
-    }
-    return self;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,6 +32,7 @@
     
     UICollectionViewFlowLayout *flow = [[UICollectionViewFlowLayout alloc] init];
     flow.scrollDirection = UICollectionViewScrollDirectionVertical;
+    flow.itemSize =CGSizeMake(100., 100.);
     self.locationsListCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flow];
     self.locationsListCollectionView.translatesAutoresizingMaskIntoConstraints = NO;
     

@@ -57,6 +57,8 @@
     [self addChildViewController:self.locationsListVc];
     [self.view addSubview:self.locationsListVc.view];
     [self.locationsListVc didMoveToParentViewController:self];
+    self.locationsListVc.locationListManager.apiClient = self.apiClient;
+
 }
 
 - (void)viewDidLoad {
@@ -71,6 +73,7 @@
     self.navigationItem.titleView = self.searchTextFiled;
     self.searchTextFiled.returnKeyType = UIReturnKeyDone;
     self.searchTextFiled.delegate = self;
+
 }
 
 #pragma mark - Layout
@@ -101,9 +104,8 @@
     __weak typeof(self) weakSelf = self;
     [self.apiClient getVenuesNearCoordinate:location.coordinate radius:kCLLocationAccuracyKilometer query:query categories:nil completion:^(NSArray<NGWVenue *> * _Nullable venues, NSError * _Nullable error) {
         typeof(self) strongSelf = weakSelf;
-        @synchronized(strongSelf.locationsListVc){
-            strongSelf.locationsListVc.venueArray = venues ? : @[];
-        }
+            NSArray *newVenues = venues ? : @[];
+            [strongSelf.locationsListVc.locationListManager updateCollectionWithItems:newVenues];
     }];
 }
 
